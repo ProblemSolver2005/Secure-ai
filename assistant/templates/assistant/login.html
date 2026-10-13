@@ -1,0 +1,5 @@
+{% extends 'assistant/base.html' %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+<div class="login-wrap"><div class="login-card"><a class="brand login-brand" href="#"><span class="brand-mark">S</span><span>sentinel<span class="brand-light">.ai</span><small>SECURITY WORKSPACE</small></span></a><div class="eyebrow">SECURE ACCESS</div><h1>Welcome back.</h1><p class="muted">Sign in to your security workspace.</p><form method="post" class="form-stack">{% csrf_token %}{% if form.errors %}<div class="error-box">Username or password is incorrect.</div>{% endif %}<label for="id_username">Username</label>{{ form.username }}<label for="id_password">Password</label>{{ form.password }}<button class="btn btn-primary btn-full" type="submit">Sign in <span>→</span></button></form><div class="login-foot"><span class="secure-dot"></span> Your session is protected by Django authentication.</div></div></div>
+{% endblock %}
